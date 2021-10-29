@@ -1,6 +1,7 @@
 ﻿using Autofac.Extras.DynamicProxy;
 using Business.Abstract;
 using Business.CrossCuttingConcerns.ExceptionHandling;
+using Business.CrossCuttingConcerns.Logging;
 using Business.CrossCuttingConcerns.Validation;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -23,9 +24,9 @@ using System.Threading.Tasks;
 
         [ValidationAspect(typeof(ProductValidator))]
         [ExceptionHandling]
+        
         public void Add(Product product)
         {
-            int result = 10 / product.CategoryID;
             _productDal.Add(product);
         }
 
@@ -40,6 +41,7 @@ using System.Threading.Tasks;
             return _productDal.Get(filter);
         }
 
+        [LogAspect]
         public List<Product> GetAll(Expression<Func<Product, bool>> filter = null)
         {
             return _productDal.GetAll();

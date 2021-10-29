@@ -6,8 +6,8 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Business.CrossCuttingConcerns.Interception
-{
+ namespace Business.CrossCuttingConcerns.Interception
+ {
     public class AspectSelector : IInterceptorSelector
     {
         public IInterceptor[] SelectInterceptors(Type type, MethodInfo method, IInterceptor[] interceptors)
@@ -21,4 +21,4 @@ namespace Business.CrossCuttingConcerns.Interception
             return classAttributes.ToArray();
         }
     }
-}
+ }

@@ -13,8 +13,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Business.Resolvers.Autofac
-{
+ namespace Business.Resolvers.Autofac
+ {
     public class DataModule : Module
     {
         protected override void Load(ContainerBuilder builder)
@@ -33,7 +33,9 @@ namespace Business.Resolvers.Autofac
                 }).SingleInstance();
         }
     }
-}
+ }
+
+
 
 
 
